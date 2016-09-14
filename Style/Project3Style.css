@@ -1,0 +1,487 @@
+body {
+  padding-top: 120px;
+  margin:0px;
+}
+
+header {
+    background: white;
+    opacity: .9;
+    height: 120px;
+    position: fixed;
+    top: 0;
+    transition: top 0.1s ease-in-out;
+    width: 100%;
+    border: 1.2px solid rgba(128, 128, 128, 0.29);
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    z-index: 200;
+}
+
+#blah {
+    color: #ffb347;
+    height: 120px;
+    display: flex;
+}
+
+#sub_container {
+  font-size: 25px;
+  font-family: 'Kalam', cursive;
+    font-weight: 300;
+  display:flex;
+  margin: 0 auto;
+}
+
+#resume {
+    float: left;
+    align-self: center;
+    margin-right: 60px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffb347;
+    font-weight: 500;
+}
+
+#bio {
+    float: left;
+    align-self: center;
+    margin-right: 60px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffb347;
+    font-weight: 500;
+}
+
+#contact {
+    float: left;
+    align-self: center;
+    margin-right: 60px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffb347;
+    font-weight: 500;
+}
+
+#band{
+    float: left;
+    align-self: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffb347;
+    font-weight: 500;
+}
+
+
+#greeting {
+  height: 150px;
+}
+.intro {
+    color: #ffb347;
+    justify-content: center;
+    font-family: 'Oxygen', sans-serif;
+    background-color: white;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+#circle {
+    align-self: center;
+    width: 600;
+    height: 600;
+    background: white;
+    border: 2px solid #ffb347;
+    -moz-border-radius: 300px;
+    -webkit-border-radius: 300px;
+    border-radius: 300px;
+    cursor:pointer;
+    overflow: hidden;
+}
+
+#banner {
+  font-size:20px;
+  vertical-align: middle;
+  text-align:center;
+
+}
+
+#circle:hover + #banner {
+  display: block;
+}
+
+#my {
+    text-align: left;
+    font-size: 30px;
+    margin: 10px 0px
+}
+
+#studying {
+    text-align: left;
+    font-size: 30px;
+    margin-top:15px;
+}
+
+#here {
+    text-align: left;
+    font-size: 22px;
+    letter-spacing: .8px;
+    word-spacing: 1.2px;
+    line-height: 30px;
+    font-weight: 100;
+    color: black;
+}
+
+#bigtitle {
+    font-size: 40;
+    text-align: -webkit-center;
+    font-weight: bold;
+    font-variant: small-caps;
+    margin: 20px 0px;
+}
+
+.nav-up {
+  top: -121.2px;
+}
+
+main {
+  background-color:white;
+  height: 2700px;
+}
+
+.topbarnav:hover {
+  opacity:.8;
+}
+
+.linkmore {
+    font-size: 28px;
+    border: solid 2px;
+    border-radius: 18px;
+    padding: 0px 6px 2px 6px;
+    margin: 15px 0px;
+}
+
+.formatlink {
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffb347;
+}
+
+.linkmore:hover {
+font-weight:  bold;
+opacity:.8;
+}
+
+#linkbox {
+    margin-top: 40px;
+}
+
+@media (min-width: 1140px) { .intro {
+  max-width: 970px;
+}}
+
+@media (min-width: 992px) {.intro {
+  max-width: 970px;
+}}
+
+@media (min-width: 768px) {.intro {
+  max-width: 750px;
+}}
+
+
+
+.intro {
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+
+footer {
+  background: white;
+}
+
+#footer_text {
+  color: #ffb347;
+  font-size:20px;
+  margin:5px;
+}
+
+
+
+
+.wrapper{
+  width:100%;
+  position:relative;
+  margin:auto 0;
+}
+
+/**
+ * Padding is set relative to the width
+ * of the element, so here padding-top:60% is
+ * a percentage of the width. This allows us 
+ * to set the height as a ratio of the width
+ *
+ */
+
+.carousel {
+    width: 100%;
+    border-radius: 375px;
+    position: relative;
+    padding-top: 60%;
+    overflow: hidden;
+    border: 4px solid orange;
+}
+
+.inner{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+}
+
+/**
+ * ==========================
+ * Animation styles
+ * 
+ * Notes:
+ * 1. We use z-index to position active slides in-front 
+ * of non-active slides
+ * 2. We set right:0 and left:0 on .slide to provide us with
+ * a default positioning on both sides of the slide. This allows 
+ * us to trigger JS and CSS3 animations easily
+ *
+ */
+.slide{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  right:0;
+  left:0;
+  z-index: 1;
+  opacity: 0;
+}
+
+.slide.active,
+.slide.left,
+.slide.right{
+  z-index: 2;
+  opacity: 1;
+}
+
+/**
+ * ==========================
+ * JS animation styles
+ * 
+ * We use jQuery.animate to control the sliding animations
+ * when CSS3 animations are not available. In order for
+ * the next slide to slide in from the right, we need
+ * to change the left:0 property of the slide to left:auto
+ *
+ */
+
+.js-reset-left{left:auto}
+
+/**
+ * ==========================
+ * CSS animation styles
+ * 
+ * .slide.left and .slide.right set-up
+ * the to-be-animated slide so that it can slide
+ * into view. For example, a slide that is about 
+ * to slide in from the right will:
+ * 1. Be positioned to the right of the viewport (right:-100%)
+ * 2. Slide in when the style is superseded with a more specific style (right:0%)
+ *
+ */
+.slide.left{
+  left:-100%;
+  right:0;
+}
+
+.slide.right{
+  right:-100%;
+  left: auto;
+}
+
+.transition .slide.left{left:0%}
+.transition .slide.right{right:0%}
+
+/**
+ * The following classes slide the previously active
+ * slide out of view before positioning behind the 
+ * currently active slide
+ *
+ */
+.transition .slide.shift-right{right: 100%;left:auto}
+.transition .slide.shift-left{left: 100%;right:auto}
+
+/**
+ * This sets the CSS properties that will animate. We set the
+ * transition-duration property dynamically via JS.
+ * We use the browser's default transition-timing-function
+ * for simplicity's sake
+ * 
+ * It is important to note that we are using CodePen's inbuilt
+ * CSS3 property prefixer. For your own projects, you will need
+ * to prefix the transition and transform properties here to ensure
+ * reliable support across browsers
+ *
+ */
+.transition .slide{
+  transition-property: right, left, margin;
+}
+
+/**
+ * ==========================
+ * Indicators
+ *
+ */
+.indicators{
+  width:100%;
+  position: absolute;
+  bottom:0;
+  z-index: 4;
+  padding:0;
+  text-align: center;
+}
+
+.indicators li{
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  margin: 5px;
+  background: #fff;
+  list-style-type: none;
+  border-radius: 50%;
+  cursor:pointer;
+  transition:background 0.3s ease-out;
+}
+
+.indicators li.active{background:#ffb347}
+
+.indicators li:hover{background-color:#2b2b2b}
+
+/**
+ * ==========================
+ * Arrows 
+ *
+ */
+.arrow{
+  width: 20px;
+  height: 20px;
+  position:absolute;
+  top:50%;
+  z-index:5;
+  border-top:3px solid #fff;
+  border-right:3px solid #fff;
+  cursor:pointer;
+  transition:border-color 0.2s ease-out;
+}
+
+.arrow:hover{border-color:#ffb347}
+
+.arrow-left{
+  left:20px;
+  transform:rotate(225deg);
+}
+
+.arrow-right{
+  right:20px;
+  transform:rotate(45deg);
+}
+
+/**
+ * ==========================
+ * For demo purposes only
+ * 
+ * Please note that the styles below are used
+ * for the purposes of this demo only. There is no need
+ * to use these in any of your own projects
+ *
+ */
+.slide{
+  text-align:center;
+  background-size:cover;
+}
+
+h1{
+  width:100px;
+  height:100px;
+  background-color:rgba(146, 45, 141,0.7);
+  margin:auto;
+  line-height:100px;
+  color:#fff;
+  font-size:2.4em;
+  border-radius:50%;
+}
+
+.slide:nth-child(1){
+  background:url(proj3a.jpg);
+  background-size: cover;
+ }
+
+.slide:nth-child(2){
+  background-image:url(proj3b.jpg);
+}
+
+.slide:nth-child(3){
+  background-image:url(proj3c.jpg);
+ }
+
+ .slide:nth-child(4){
+  background-image:url(proj3d.png);
+ }
+
+
+ .slide:nth-child(5){
+  background-image:url(proj3e.png);
+ }
+
+ .slide:nth-child(6){
+  background-image:url(proj3f.jpg);
+ }
+
+
+ .slide:nth-child(7){
+  background-image:url(proj3g.png);
+ }
+
+ .slide:nth-child(8){
+  background-image:url(proj3h.jpg);
+ }
+
+ .slide:nth-child(9){
+  background-image:url(proj3i.jpg);
+ }
+
+ .slide:nth-child(10){
+  background-image:url(proj3j.jpg);
+ }
+
+  .slide:nth-child(11){
+  background-image:url(proj3k.jpg);
+ }
+
+
+ .no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(plane.gif) center no-repeat #fff;
+}
+
+
+
+
+#section_title {
+    width: 100%;
+}
