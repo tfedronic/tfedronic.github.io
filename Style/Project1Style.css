@@ -420,32 +420,32 @@ h1{
 }
 
 .slide:nth-child(1){
-  background:url(proj1a.jpg);
+  background:url(proj1a.JPG);
   background-size: cover;
  }
 
 .slide:nth-child(2){
-  background-image:url(proj1b.jpg);
+  background-image:url(proj1b.JPG);
 }
 
 .slide:nth-child(3){
-  background-image:url(proj1c.jpg);
+  background-image:url(proj1c.JPG);
  }
 
  .slide:nth-child(4){
-  background-image:url(proj1c.JPEG);
+  background-image:url(proj1c.jpeg);
  }
 
  .slide:nth-child(5){
-  background-image:url(proj1d.JPEG);
+  background-image:url(proj1d.jpeg);
  }
 
  .slide:nth-child(6){
-  background-image:url(proj1e.JPEG);
+  background-image:url(proj1e.jpeg);
  }
 
  .slide:nth-child(7){
-  background-image:url(proj1f.JPEG);
+  background-image:url(proj1f.jpeg);
  }
 
 
